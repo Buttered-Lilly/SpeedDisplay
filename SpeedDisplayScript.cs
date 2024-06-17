@@ -2,6 +2,7 @@
 using HarmonyLib;
 using TMPro;
 using UnityEngine;
+using System.Globalization;
 
 namespace SpeedDisplay
 {
@@ -26,7 +27,7 @@ namespace SpeedDisplay
             base.OnUpdate();
             if (playerMovement != null)
             {
-                readOut.text = $"{playerMovement.GetVelocity().magnitude.ToString("F3")}M/s";
+                readOut.text = $"{playerMovement.GetVelocity().magnitude.ToString("F3", CultureInfo.InvariantCulture)}M/s";
             }
         }
 
